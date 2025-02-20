@@ -1,1 +1,10 @@
-/* You can add global styles to this file, and also import other style files */
+@import "assets/vendor/bootstrap/icons/bootstrap-icons.css";
+@import "assets/vendor/font-awesome/css/all.min.css";
+
+@import "scss/variable";
+@import "scss/mixin";
+@import "scss/root";
+@import "scss/button";
+@import "scss/color";
+@import "scss/base";
+@import "scss/style";

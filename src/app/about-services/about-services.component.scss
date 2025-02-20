@@ -1,0 +1,224 @@
+@import 'src/scss/base';
+@import 'src/scss/button';
+@import 'src/scss/color';
+@import 'src/scss/mixin';
+@import 'src/scss/root';
+@import 'src/scss/variable';
+
+.about-section {
+    margin-bottom: 150px;
+    overflow: hidden;
+    padding: 0 80px;
+
+    @include down-lg {
+        padding: 0 30px;
+    }
+
+    @include down-md {
+        margin-bottom: 100px;
+        padding: 0 20px;
+    }
+
+    @include down-sm {
+        margin-bottom: 50px;
+        padding: 0 10px;
+    }
+
+    .about-banner {
+        img {
+            border-radius: 20px;
+            width: 100%; // Ajusta el tamaño de la imagen para que sea responsiva
+            max-width: 350px; // Tamaño máximo de la imagen
+            height: auto; // Mantiene la proporción de la imagen
+            display: block; // Hace que la imagen sea un bloque
+            margin: 20px auto 0; // Centra la imagen y baja un poco
+        }
+    }
+
+    .about-text {
+        padding: 40px;
+        text-align: left;
+
+        h2 {
+            margin: 0 0 25px;
+            font-size: 40px;
+            font-weight: 500;
+            color: var(--px-black);
+            line-height: 1.15;
+        }
+
+        h3 {
+            margin-bottom: 80px;
+            font-size: 25px;
+            font-weight: 500;
+            color: #4b4c53;
+        }
+
+        p {
+            color: var(--px-black);
+            font-size: 18px;
+        }
+    }
+
+    .more {
+        display: flex;
+        align-items: center;
+
+        button {
+            width: 3.5rem;
+            height: 3.5rem;
+            border-radius: 50%;
+            overflow: hidden;
+            background-color: white;
+            color: var(--px-black);
+            border: 2px solid rgb(230, 233, 238);
+            transition: transform 0.3s ease, background-color 0.4s ease;
+
+            &:hover {
+                background-color: #191919;
+                color: white;
+            }
+
+            i {
+                font-size: 20px; // Ajuste inicial
+            }
+        }
+
+        p {
+            padding-left: 30px;
+            color: var(--px-black);
+            font-weight: 500;
+            font-size: 20px;
+            margin: 0;
+        }
+    }
+
+    // Mixins generales para todas las clases y componentes
+    @include down-lg {
+        .about-banner img {
+            max-width: 300px;
+        }
+
+        .about-text {
+            padding: 30px 0;
+
+            h2 {
+                font-size: 30px;
+            }
+
+            h3 {
+                margin-bottom: 70px;
+                font-size: 22px;
+            }
+
+            p {
+                font-size: 16px;
+            }
+        }
+
+        .more {
+            button {
+                width: 3rem;
+                height: 3rem;
+
+                i {
+                    font-size: 18px;
+                }
+            }
+
+            p {
+                font-size: 18px;
+                padding-left: 20px;
+            }
+        }
+    }
+
+    @include down-md {
+        .about-section {
+            margin-bottom: 100px;
+            padding: 0 20px;
+        }
+
+        .about-banner img {
+            max-width: 200px;
+        }
+
+        .about-text {
+            padding: 0 0 40px;
+            text-align: center;
+
+            h2 {
+                font-size: 25px;
+            }
+
+            h3 {
+                margin-bottom: 60px;
+                font-size: 20px;
+            }
+
+            p {
+                font-size: 16px;
+            }
+        }
+
+        .more {
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            button {
+                width: 2.5rem;
+                height: 2.5rem;
+                margin: 0; // Centra el theme-icon
+
+                i {
+                    font-size: 16px;
+                }
+            }
+
+            p {
+                padding-left: 10px;
+                margin: auto;
+            }
+        }
+    }
+
+    @include down-sm {
+        .about-section {
+            margin-bottom: 50px;
+            padding: 0 10px;
+        }
+
+        .about-banner img {
+            max-width: 100px;
+        }
+
+        .about-text {
+            padding: 0 0 20px;
+
+            h2 {
+                font-size: 20px;
+            }
+
+            h3 {
+                margin-bottom: 40px;
+                font-size: 18px;
+            }
+
+            p {
+                font-size: 14px;
+            }
+        }
+
+        .more {
+            button {
+                width: 2rem;
+                height: 2rem;
+
+                i {
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+}

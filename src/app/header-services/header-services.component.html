@@ -1,0 +1,43 @@
+<div class="header-top-fixed one-page-nav" [ngClass]="{'menu-open menu-open-desk' : sidebarOpen}">
+    <div class="container">
+        <a (click)="scrollToElement('home')"class="header__logo">
+            <span class="full-logo">Ray Mondragón</span>
+            <span class="short-logo">RM</span>
+        </a>
+
+        <ul class="main-menu">
+            <li>
+                <a class="menu-item" activeClass="active"  (click)="scrollToElement('myservices')">
+                    Servicios
+                </a>
+            </li>
+            <li>
+                <a class="menu-item" activeClass="active"  (click)="scrollToElement('myprojects')">
+                    Trabajos
+                </a>
+            </li>
+            <li>
+                <a class="menu-item" activeClass="active"  (click)="scrollToElement('mytestimonials')">
+                    Testimonios
+                </a>
+            </li>
+            <li>
+                <a class="menu-item" activeClass="active"  (click)="scrollToElement('bookacall')">
+                    Agendar llamada
+                </a>
+            </li>
+            <li>
+                <a class="menu-item" activeClass="active"  (click)="scrollToElement('faq')">
+                    Preguntas
+                </a>
+            </li>
+        </ul>
+
+        <div class="ms-auto d-flex" (clickOutside)="onClickedOutside($event)">
+            <a class="px-btn" (click)="scrollToElement('bookacall')">¡Hablemos!</a>
+            <button class="toggler-menu" [ngClass]="{'open': sidebarOpen}" (click)="toggleMenu()">
+                <span></span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,18 @@
+<div class="faq container" id="faq">
+    <div class="title">
+        <h2>Preguntas frecuentes</h2>
+    </div>
+    <div class="accordion">
+        <div *ngFor="let item of items; let i = index" class="accordion-item" [ngClass]="{ 'expanded': expandedIndex === i }">
+          <div class="accordion-header" (click)="toggleAccordion(i)">
+            <span class="accordion-number">{{ (i + 1) | number: '2.0' }}.</span>
+            <span class="accordion-title">{{ item.title }}</span>
+            <span class="accordion-icon">{{ expandedIndex === i ? '−' : '+' }}</span>
+          </div>
+          <div *ngIf="expandedIndex === i" class="accordion-content">
+            {{ item.content }}
+          </div>
+        </div>
+      </div>
+      
+</div>

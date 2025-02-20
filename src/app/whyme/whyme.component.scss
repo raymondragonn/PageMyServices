@@ -1,0 +1,111 @@
+@import "src/scss/base";
+@import "src/scss/button";
+@import "src/scss/color";
+@import "src/scss/mixin";
+@import "src/scss/root";
+@import "src/scss/variable";
+
+.whyme {
+    margin-bottom: 150px;
+    padding: 0 60px;
+
+    .title {
+        h2 {
+            color: var(--px-black);
+            margin-bottom: 30px;
+            font-size: 30px;
+            font-weight: 600;
+        }
+    }
+
+    .custom-card {
+        background-color: var(--px-theme);
+        border-radius: 20px;
+        padding: 15px;
+        transition: 0.3s;
+        border: none;
+
+        .card-body {
+            height: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+
+            .icon {
+                position: absolute;
+                top: 10px;
+                left: 10px;
+                padding: 10px 15px;
+
+                i {
+                    font-size: 2.5rem;
+                }
+            }
+
+            .card-title {
+                font-weight: 600;
+                font-size: 2.2rem;
+
+                .card-text {
+                    color: var(--px-black);
+                }
+            }
+        }
+    }
+
+    @include down-xl {
+        padding: 0 40px;
+
+        .custom-card .card-body {
+            height: 250px;
+
+            .card-title {
+                font-size: 1.2rem;
+            }
+        }
+    }
+
+    @include down-lg {
+        padding: 0 20px;
+
+        .custom-card .card-body {
+            height: 200px;
+
+            .card-title {
+                font-size: 1rem;
+            }
+        }
+    }
+
+    @include down-sm {
+        margin-bottom: 100px;
+
+        .title {
+            text-align: center;
+        }
+
+        .custom-card {
+            padding: 0;
+            margin: 0 auto;
+            height: 280px;
+
+            .card-body {
+                .icon {
+                    padding: 0 5px;
+
+                    i {
+                        font-size: 2.5rem;
+                    }
+                }
+
+                .card-title {
+                    font-size: 25px;
+                }
+
+                .card-text {
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+}

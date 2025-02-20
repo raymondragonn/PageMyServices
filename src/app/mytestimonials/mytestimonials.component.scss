@@ -1,0 +1,77 @@
+@import "src/scss/base";
+@import "src/scss/button";
+@import "src/scss/color";
+@import "src/scss/mixin";
+@import "src/scss/root";
+@import "src/scss/variable";
+
+.mytestimonials {
+    margin-bottom: 200px;
+    padding: 0 150px; // Ajuste de padding para dispositivos móviles
+    @include down-md {
+        padding: 0 30px; // Ajuste de padding para dispositivos medianos
+    }
+    @include down-xl {
+        padding: 0 50px; // Ajuste de padding para dispositivos grandes
+    }
+    .title {
+        margin-bottom: 50px;
+        h2 {
+            text-align: center;
+            color: var(--px-black);
+            font-size: 50px;
+            letter-spacing: 1.2px;
+            font-weight: 700;
+            @include down-xl {
+                font-size: 35px;
+            }
+        }
+    }
+    .testimonials-boxes {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        .box {
+            padding: 30px;
+            border: 1px solid #f8f8f8;
+            border-radius: 20px;
+            box-shadow: 0 0px 50px rgba(128, 128, 128, 0.1);
+            margin-bottom: 20px;
+            flex: 1 1 calc(33.333% - 40px); // Ajuste para que las cajas ocupen un tercio del contenedor
+            max-width: calc(33.333% - 40px); // Ajuste para que las cajas ocupen un tercio del contenedor
+            @include down-lg {
+                flex: 1 1 calc(50% - 40px); // Ajuste para que las cajas ocupen la mitad del contenedor en pantallas grandes
+                max-width: calc(50% - 40px); // Ajuste para que las cajas ocupen la mitad del contenedor en pantallas grandes
+            }
+            @include down-md {
+                flex: 1 1 100%; // Ajuste para que las cajas ocupen el 100% del contenedor en pantallas medianas
+                max-width: 100%; // Ajuste para que las cajas ocupen el 100% del contenedor en pantallas medianas
+            }
+            .profile {
+                margin-bottom: 20px;
+                h3 {
+                    font-size: 20px;
+                    font-weight: 600;
+                    @include down-md {
+                        font-size: 16px;
+                    }
+                }
+                h4 {
+                    color: #666666;
+                    font-size: 14px;
+                    font-weight: 600;
+                    @include down-md {
+                        font-size: 16px;
+                    }
+                }
+            }
+            p {
+                font-size: 16px;
+                font-weight: 400;
+                @include down-md {
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,19 @@
+@import 'mixin';
+@import 'variable';
+
+:root {
+	--bs-heading-color: var(--px-heading);
+}
+
+:root, 
+[data-bs-theme=light] {
+
+	--px-theme:	#{$px-theme};
+	--px-black:	#{$px-black};
+	--px-white:	#{$px-white};
+	--px-gray: #{$px-gray};
+}
+
+[data-bs-theme=dark] {
+	
+}

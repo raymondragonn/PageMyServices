@@ -1,0 +1,82 @@
+@import 'src/scss/base';
+@import 'src/scss/button';
+@import 'src/scss/color';
+@import 'src/scss/mixin';
+@import 'src/scss/root';
+@import 'src/scss/variable';
+
+.intro-services {
+    margin-top: 100px;
+    margin-bottom: 120px;
+    padding: 72px 150px;
+    overflow: hidden;
+
+    .about-text {
+        text-align: center;
+        padding: 40px 120px;
+
+        h1 {
+            margin-bottom: 25px;
+            font-size: 50px;
+            font-weight: 700;
+            color: var(--px-black);
+            line-height: 1.15;
+        }
+
+        h2 {
+            margin-bottom: 30px;
+            font-size: 25px;
+            font-weight: 500;
+            color: var(--px-black);
+            line-height: 1.15;
+        }
+    }
+
+    @include down-lg {
+        padding: 60px 100px;
+
+        .about-text {
+            padding: 30px 60px;
+
+            h1 {
+                font-size: 45px;
+            }
+
+            h2 {
+                font-size: 20px;
+            }
+        }
+    }
+
+    @include down-md {
+        padding: 50px 80px;
+
+        .about-text {
+            padding: 20px 40px;
+
+            h1 {
+                font-size: 38px;
+            }
+
+            h2 {
+                font-size: 18px;
+            }
+        }
+    }
+
+    @include down-sm {
+        padding: 40px 60px;
+
+        .about-text {
+            padding: 10px 20px;
+
+            h1 {
+                font-size: 30px;
+            }
+
+            h2 {
+                font-size: 16px;
+            }
+        }
+    }
+}

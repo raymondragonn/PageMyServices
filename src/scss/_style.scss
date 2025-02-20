@@ -1,0 +1,146 @@
+@import 'mixin';
+@import 'variable';
+
+
+/* Background
+-------------------------------*/
+body {
+    background-color: var(--px-bg);
+    color: var(--px-text);
+    font-family: $px-font;
+    --bs-body-font-weight: 400;
+    --bs-body-font-size: 1rem;
+    --bs-body-line-height: 1.6;
+    overflow-x: hidden;
+}
+
+a {
+	text-decoration: none;
+}
+
+/* ----------------------
+*   owl 
+---------------------------*/
+.owl-dots {
+    text-align: center;
+    font-size: 0px;
+    padding-top: 35px;
+    .owl-dot {
+        display: inline-block;
+        vertical-align: top;
+        width: 10px;
+        height: 10px;
+        background: transparent;
+        border: 1px solid var(--px-text);
+        transition: ease all 0.55s;
+        border-radius: 8px;
+        margin: 0 4px;
+
+        &.active {
+            background: var(--px-theme);
+            width: 20px;
+        }
+    }
+
+
+}
+
+.owl-nav {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    pointer-events: none;
+
+    .owl-next,
+    .owl-prev {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        width: 35px;
+        height: 35px;
+        background: var(--px-theme);
+        color: var(--px-theme-text);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        pointer-events: auto;
+        transition: ease all 0.35s;
+
+        &:hover {
+        	background: var(--px-theme-text);
+        	color: var(--px-theme);
+        }
+    }
+
+    .owl-next {
+        right: 0px;
+
+        @include up-lg {
+            right: -50px;
+        }
+    }
+
+    .owl-prev {
+        left: 0px;
+
+        @include up-lg {
+            left: -50px;
+        }
+    }
+}
+
+.brand-section {
+    border-bottom: 1px solid #eee;
+}
+
+/* ----------------------
+*   Testimonials
+---------------------------*/
+.testimonials-box{
+    border: 1px solid #E8E8E8;
+    border-radius: 8px;
+    padding: 40px;
+    @include down-lg {
+        padding: 25px;
+    }
+    .t-icon {
+        margin: 0 0 30px;
+    }
+    h5 {
+        // letter-spacing: 1px;
+        font-weight: 400;
+        margin: 0 0 20px;
+    }
+    p {
+        // letter-spacing: 1px;
+    }
+    .t-user {
+        display: flex;
+        align-items: center;
+        .t-user-icon {
+            width: 60px;
+            height: 60px;
+            img {
+                pointer-events: none;
+                user-select: none;
+                width: 100%;
+                height: 100%;
+                border-radius: 50%;
+                object-fit: cover;
+            }
+        }
+        h6 {
+            margin: 0;
+            font-weight: 400;
+        }
+        .t-text {
+            flex: 1;
+            padding-left: 15px;
+        }
+    }
+}

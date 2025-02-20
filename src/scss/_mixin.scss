@@ -1,0 +1,63 @@
+// Media Queries Mixins
+$px-media-xl: 1200px !default;
+$px-media-lg: 1024px !default;
+$px-media-md: 768px !default;
+$px-media-sm: 480px !default;
+$px-media-xs: 0px !default;
+
+// Pantallas grandes 
+@mixin down-xl {
+  @media (max-width: $px-media-xl) { // Pantallas de 1200px o menos (hasta 1200px)
+    @content;
+  }
+}
+
+@mixin up-xl {
+  @media (min-width: $px-media-xl) { // Pantallas de 1200px o mas (desde 1200px)
+    @content;
+  }
+}
+
+@mixin down-lg {
+  @media (max-width: $px-media-lg) { // Pantallas de 1025px o menos (hasta 1025px)
+    @content;
+  }
+}
+
+@mixin up-lg {
+  @media (min-width: $px-media-lg + 1) { // Pantallas de 1026px o más (desde 1026px)
+    @content;
+  }
+}
+
+@mixin down-md {
+  @media (max-width: $px-media-md) { // Pantallas de 840px o menos (hasta 840px)
+    @content;
+  }
+}
+
+@mixin up-md {
+  @media (min-width: $px-media-md + 1) { // Pantallas de 841px o más (desde 841px)
+    @content;
+  }
+}
+
+@mixin down-sm {
+  @media (max-width: $px-media-sm) { // Pantallas de 576px o menos (hasta 576px)
+    @content;
+  }
+}
+
+@mixin up-sm {
+  @media (min-width: $px-media-sm + 1) { // Pantallas de 577px o más (desde 577px)
+    @content;
+  }
+}
+
+
+@mixin up-xs {
+  @media (min-width: $px-media-xsm + 1) { // Pantallas de 376px o más (desde 376px)
+    @content;
+  }
+}
+

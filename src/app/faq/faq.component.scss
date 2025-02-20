@@ -1,0 +1,171 @@
+@import "src/scss/base";
+@import "src/scss/button";
+@import "src/scss/color";
+@import "src/scss/mixin";
+@import "src/scss/root";
+@import "src/scss/variable";
+
+.faq {
+    margin-bottom: 200px;
+    padding: 0 80px;
+
+    @include down-xl {
+        padding: 0 40px;
+    }
+
+    @include down-lg {
+        padding: 0 20px;
+    }
+
+    @include down-md {
+        padding: 0 10px;
+    }
+
+    @include down-sm {
+        margin-bottom: 50px;
+        padding: 0 5px;
+    }
+
+    .title {
+        margin-bottom: 50px;
+
+        h2 {
+            text-align: center;
+            color: var(--px-black);
+            font-size: 50px;
+            letter-spacing: 1.2px;
+            font-weight: 700;
+
+            @include down-xl {
+                font-size: 35px;
+            }
+
+            @include down-lg {
+                font-size: 30px;
+            }
+
+            @include down-md {
+                font-size: 25px;
+            }
+
+            @include down-sm {
+                font-size: 20px;
+            }
+        }
+    }
+
+    .accordion {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+        gap: 1rem;
+
+        @include down-sm {
+            grid-template-columns: 1fr;
+        }
+
+        .accordion-item {
+            background: var(--px-theme);
+            height: 120px;
+            border: none;
+            border-radius: 15px;
+            padding: 10px;
+            cursor: pointer;
+            transition: height 0.2s ease;
+
+            &.expanded {
+                height: 250px;
+                background: #e9e8ed;
+            }
+
+            @include down-lg {
+                height: 120px;
+
+                &.expanded {
+                    height: 280px;
+                }
+            }
+
+            @include down-md {
+                height: 120px;
+
+                &.expanded {
+                    height: 200px;
+                }
+            }
+
+            @include down-sm {
+                height: 100px;
+
+                &.expanded {
+                    height: 220px;
+                }
+            }
+
+            .accordion-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                font-weight: bold;
+                padding: 20px 60px 10px 60px;
+
+                @include down-sm {
+                    padding: 20px 15px;
+                }
+
+                .accordion-number {
+                    color: #888;
+                    font-size: 18px;
+                    font-weight: 400;
+
+                    @include down-sm {
+                        font-size: 12px;
+                    }
+                }
+
+                .accordion-title {
+                    font-size: 22px;
+                    font-weight: 500;
+                    flex-grow: 1;
+                    margin-left: 10px;
+
+                    @include down-sm {
+                        font-size: 16px;
+                    }
+                }
+
+                .accordion-icon {
+                    font-size: 30px;
+                    font-weight: 300;
+
+                    @include down-sm {
+                        font-size: 25px;
+                    }
+                }
+            }
+
+            .accordion-content {
+                padding: 10px 60px 20px 90px;
+                font-size: 18px;
+                color: #555;
+                transition: padding 0.5s ease;
+
+                &.expanded {
+                    padding: 20px 40px;
+                }
+
+                @include down-md {
+                    padding: 0px 40px 10px 40px;
+                }
+
+                @include down-sm {
+                    padding: 0 15px 10px 15px;
+                    font-size: 14px;
+                }
+            }
+        }
+
+        @include down-sm {
+            padding: 0 10px;
+        }
+    }
+}
