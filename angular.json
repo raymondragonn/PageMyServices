@@ -39,10 +39,12 @@
               "src/scss/_mixin.scss",
               "src/scss/_root.scss",
               "src/scss/_style.scss",
-              "src/scss/_variable.scss"
+              "src/scss/_variable.scss",
+              "node_modules/aos/dist/aos.css"
             ],
             "scripts": [
-              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
+              "node_modules/aos/dist/aos.js"
             ]
           },
           "configurations": {

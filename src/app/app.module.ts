@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import * as AOS from 'aos';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { ServicesComponent } from './myservices/myservices.component';
@@ -42,4 +43,8 @@ import { RouterModule } from '@angular/router';
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { 
+  constructor() {
+    AOS.init();
+  }
+}
