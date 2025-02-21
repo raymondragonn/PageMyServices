@@ -65,20 +65,20 @@
 
         .accordion-item {
             background: var(--px-theme);
-            height: 120px;
+            height: 100px;
             border: none;
-            border-radius: 15px;
+            border-radius: 10px;
             padding: 10px;
             cursor: pointer;
             transition: height 0.2s ease;
 
             &.expanded {
-                height: 250px;
-                background: #e9e8ed;
+                height: 270px;
+                background: #f4f0f1;
             }
 
             @include down-lg {
-                height: 120px;
+                height: 110px;
 
                 &.expanded {
                     height: 280px;
@@ -86,7 +86,7 @@
             }
 
             @include down-md {
-                height: 120px;
+                height: 100px;
 
                 &.expanded {
                     height: 200px;
@@ -104,18 +104,18 @@
             .accordion-header {
                 display: flex;
                 justify-content: space-between;
-                align-items: center;
+                align-items: center; // Centrar en el eje Y
                 font-weight: bold;
-                padding: 20px 60px 10px 60px;
+                padding: 20px; // Ajustar padding para centrar mejor el contenido verticalmente
 
                 @include down-sm {
                     padding: 20px 15px;
                 }
 
                 .accordion-number {
-                    color: #888;
-                    font-size: 18px;
-                    font-weight: 400;
+                    color: #4c4c52;
+                    font-size: 12px;
+                    font-weight: 500;
 
                     @include down-sm {
                         font-size: 12px;
@@ -123,10 +123,11 @@
                 }
 
                 .accordion-title {
-                    font-size: 22px;
-                    font-weight: 500;
+                    font-size: 18px;
+                    text-align: center;
+                    font-weight: 600;
                     flex-grow: 1;
-                    margin-left: 10px;
+                    margin-left: 20px;
 
                     @include down-sm {
                         font-size: 16px;
@@ -134,7 +135,7 @@
                 }
 
                 .accordion-icon {
-                    font-size: 30px;
+                    font-size: 20px;
                     font-weight: 300;
 
                     @include down-sm {
@@ -144,9 +145,10 @@
             }
 
             .accordion-content {
-                padding: 10px 60px 20px 90px;
-                font-size: 18px;
-                color: #555;
+                padding: 10px 40px 0 40px;
+                font-size: 16px;
+                font-weight: 400;
+                color: #4c4c52;
                 transition: padding 0.5s ease;
 
                 &.expanded {
