@@ -45,7 +45,7 @@
             }
 
             @include down-md {
-                font-size: 25px;
+                font-size: 28px;
             }
 
             @include down-sm {
@@ -89,7 +89,7 @@
                 height: 100px;
 
                 &.expanded {
-                    height: 200px;
+                    height: 240px;
                 }
             }
 

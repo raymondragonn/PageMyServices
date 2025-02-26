@@ -1,17 +1,26 @@
 <div class="container about-section">
     <div class="row justify-content-between">
+        <div class="col-lg-5">
+            <div class="about-banner" data-aos="fade-left" data-aos-duration="1000">
+                <img src="assets/img/about-me-02.png" title="Ray Mondragón" alt="Ray Mondragón" />
+            </div>
+        </div>
         <div class="col-lg-7">
             <div class="about-text" data-aos="fade-up" data-aos-duration="1000"> 
+                <div class="icon">
+                    <i class="bi bi-table"></i>
+                </div>
                 <h2>Sabes que un sitio web es importante...</h2>
                 <h3>
                     Disfruto convirtir problemas complejos en diseños simples, funcionales e
                     intuitivos.
                 </h3>
-            </div>
-        </div>
-        <div class="col-lg-5">
-            <div class="about-banner" data-aos="fade-left" data-aos-duration="1000">
-                <img src="assets/img/about-me-02.png" title="Ray Mondragón" alt="Ray Mondragón" />
+                <button class="px-btn black" (click)="scrollToElement('myservices')">
+                    Servicios
+                </button>
+                <button class="px-btn gray" (click)="scrollToElement('mytestimonials')">
+                    Testimonios
+                </button>
             </div>
         </div>
     </div>
