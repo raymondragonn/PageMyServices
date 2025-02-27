@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import * as AOS from 'aos';
 import { BrowserModule } from '@angular/platform-browser';
-import { NotifierModule } from 'angular-notifier';
 
 import { ServicesComponent } from './myservices/myservices.component';
 import { IntroServicesComponent } from './intro-services/intro-services.component';
@@ -43,7 +42,6 @@ import { EmailService } from './services/email.service';
     AppRoutingModule,
     FormsModule,
     RouterModule,
-    NotifierModule,
     ReactiveFormsModule,
     HttpClientModule
   ],

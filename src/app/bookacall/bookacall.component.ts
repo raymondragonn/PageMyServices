@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { EmailService } from '../services/email.service';
-import { NotifierService } from 'angular-notifier';
 import { HttpClient } from '@angular/common/http';
+import { NotificacionService } from '../services/notificacion.service';
 
 @Component({
   selector: 'app-bookacall',
@@ -13,8 +13,7 @@ export class BookacallComponent {
   formEmail: FormGroup;
   EnviarCorreo: boolean = false;
 
-  constructor(private fb: FormBuilder, private serviceMail: EmailService, private notifier: NotifierService) {
-    this.notifier = notifier;
+  constructor(private fb: FormBuilder, private serviceMail: EmailService, private notificacion: NotificacionService) {
     this.formEmail = this.fb.group({
       name: ['', [Validators.required]],
       email: ['', [Validators.required, Validators.email]],
@@ -27,7 +26,10 @@ export class BookacallComponent {
   }
 
   public showNotification( type: string, message: string ): void {
-    this.notifier.notify( type, message );
+    if(type === 'success')
+      this.notificacion.success(message);
+    else if(type === 'error')
+      this.notificacion.error(message);
   }
 
   mandarFormulario() {
@@ -37,7 +39,7 @@ export class BookacallComponent {
     }
     
     // Crear un objeto con los valores del formulario
-    let formData = { ...this.formEmail.value };
+    const formData = { ...this.formEmail.value };  // Cambiado a const
 
     // Eliminar los campos vacíos (si son opcionales) antes de enviarlos
     if (!formData.actualWeb) {
@@ -49,16 +51,17 @@ export class BookacallComponent {
 
     this.EnviarCorreo = true;
 
-    console.log('Enviando correo con los siguientes datos:', formData);
+    //console.log('Enviando correo con los siguientes datos:', formData);
 
     // Enviar el correo usando el servicio
     this.serviceMail.sendEmail(formData).subscribe((res) => {
-      console.log('Respuesta del servicio de correo:', res);
+      //console.log('Respuesta del servicio de correo:', res);
       this.showNotification('success', 'Correo enviado');
       this.EnviarCorreo = false;
+      this.formEmail.reset(); // Resetear el formulario
     }, (error) => {
-      console.error('Error al enviar el correo:', error);
-      console.log("Cuerpo del error:", error.error);
+      //console.error('Error al enviar el correo:', error);
+      //console.log("Cuerpo del error:", error.error);
       this.showNotification('error', 'Error al enviar el correo');
       this.EnviarCorreo = false;
     });
