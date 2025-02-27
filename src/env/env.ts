@@ -1,4 +1,4 @@
 export const environment = {
-    production: false,
-    apiLocal: 'http://localhost/BackPageMyServices/index.php'
+    production: true,
+    apiLocal: 'http://raymondragon.com/api/index.php'
   };
