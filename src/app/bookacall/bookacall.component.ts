@@ -49,11 +49,16 @@ export class BookacallComponent {
 
     this.EnviarCorreo = true;
 
+    console.log('Enviando correo con los siguientes datos:', formData);
+
     // Enviar el correo usando el servicio
     this.serviceMail.sendEmail(formData).subscribe((res) => {
+      console.log('Respuesta del servicio de correo:', res);
       this.showNotification('success', 'Correo enviado');
       this.EnviarCorreo = false;
     }, (error) => {
+      console.error('Error al enviar el correo:', error);
+      console.log("Cuerpo del error:", error.error);
       this.showNotification('error', 'Error al enviar el correo');
       this.EnviarCorreo = false;
     });

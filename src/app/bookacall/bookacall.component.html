@@ -9,7 +9,7 @@
                 <form [formGroup]="formEmail" (ngSubmit)="mandarFormulario()">
                     <div class="col-md-12">
                         <div class="form-group">
-                            <label class="form-label"><span>* </span>Nombre</label>
+                            <label class="form-label"><span>* </span>Nombre completo</label>
                             <input formControlName="name" id="name" placeholder="John Summit" class="form-control" type="text">
                             <div *ngIf="formEmail.get('name')?.invalid && formEmail.get('name')?.touched" class="text-danger">
                                 Nombre es requerido.
@@ -30,11 +30,11 @@
                             <label class="form-label"><span>* </span>¿Cómo nos ha encontrado?</label>
                             <select formControlName="findus" id="findus" class="form-control">
                                 <option value="" disabled selected>Selecciona...</option>
-                                <option value="google">Google</option>
-                                <option value="instagram">Instagram</option>
-                                <option value="facebook">Facebook</option>
-                                <option value="friend">Friend</option>
-                                <option value="other">Otro</option>
+                                <option value="Google">Google</option>
+                                <option value="Instagram">Instagram</option>
+                                <option value="Facebook">Facebook</option>
+                                <option value="Amistad">Amistad</option>
+                                <option value="Otro">Otro</option>
                             </select>
                             <div *ngIf="formEmail.get('findus')?.invalid && formEmail.get('findus')?.touched" class="text-danger">
                                 Selecciona una opción.
@@ -52,9 +52,9 @@
                             <label class="form-label"><span>* </span>Su presupuesto estimado</label>
                             <select formControlName="budget" id="budget" class="form-control">
                                 <option value="" disabled selected>Selecciona...</option>
-                                <option value="low">$5,000 - $10,000</option>
-                                <option value="medium">$10,000 - $20,000</option>
-                                <option value="high">$20,000+</option>
+                                <option value="Bajo">$5,000 - $10,000</option>
+                                <option value="Medio">$10,000 - $20,000</option>
+                                <option value="Alto">$20,000+</option>
                             </select>
                             <div *ngIf="formEmail.get('budget')?.invalid && formEmail.get('budget')?.touched" class="text-danger">
                                 Selecciona una opción.

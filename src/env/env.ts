@@ -1,4 +1,4 @@
 export const environment = {
     production: false,
-    apiLocal: 'http://localhost:8000'
+    apiLocal: 'http://localhost/BackPageMyServices/index.php'
   };
