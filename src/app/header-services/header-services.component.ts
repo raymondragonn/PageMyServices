@@ -1,16 +1,15 @@
-import { Component } from '@angular/core';
+import { Component, Renderer2, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-header-services',
   templateUrl: './header-services.component.html',
   styleUrls: ['./header-services.component.scss']
 })
-export class HeaderServicesComponent {
+export class HeaderServicesComponent implements OnInit {
   public sidebarOpen: boolean = false;
   public currentSection = 'home';
   
-  constructor(
-  ) {}
+  constructor(private renderer: Renderer2) {}
 
   scrollToElement(elementId: string) {
     const element = document.getElementById(elementId);
@@ -26,13 +25,38 @@ export class HeaderServicesComponent {
     }
   }
 
-  toggleMenu(){
+  toggleMenu() {
     this.sidebarOpen = !this.sidebarOpen;
+    const menu = document.querySelector('.main-menu');
+    if (this.sidebarOpen) {
+      this.renderer.addClass(menu, 'menu-open');
+      this.renderer.removeClass(menu, 'menu-close');
+    } else {
+      this.renderer.addClass(menu, 'menu-close');
+      this.renderer.removeClass(menu, 'menu-open');
+    }
+  }
+
+  closeMenu() {
+    this.sidebarOpen = false;
+    const menu = document.querySelector('.main-menu');
+    this.renderer.addClass(menu, 'menu-close');
+    this.renderer.removeClass(menu, 'menu-open');
+  }
+
+  ngOnInit() {
+    const menuItems = document.querySelectorAll('.main-menu li');
+    menuItems.forEach(item => {
+      item.addEventListener('click', () => {
+        this.closeMenu();
+      });
+    });
   }
 
   onClickedOutside(e: Event) {
-    if(this.sidebarOpen)
-      this.sidebarOpen = false;
+    if (this.sidebarOpen) {
+      this.closeMenu();
+    }
   }
 }
 

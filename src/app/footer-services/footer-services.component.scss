@@ -163,7 +163,7 @@
         }
 
         .redic-menu {
-            padding: 10px 15px;
+            padding: 5px 25px;
 
             li a {
                 font-size: 20px;
@@ -172,6 +172,12 @@
 
         p {
             padding: 10px 15px;
+        }
+
+        .copyright {
+            p {
+                font-size: 8px;
+            }
         }
     }
 }
