@@ -18,6 +18,9 @@
             height: auto; // Mantiene la proporción de la imagen
             display: block; // Hace que la imagen sea un bloque
             margin: 20px auto 0; // Centra la imagen y baja un poco
+            will-change: transform; // Optimiza las animaciones
+            backface-visibility: hidden; // Evita parpadeos en algunos navegadores
+            transform: translateZ(0); // Fuerza la aceleración por hardware
         }
     }
 

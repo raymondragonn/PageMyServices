@@ -52,9 +52,9 @@
                             <label class="form-label"><span>* </span>Su presupuesto estimado</label>
                             <select formControlName="budget" id="budget" class="form-control">
                                 <option value="" disabled selected>Selecciona...</option>
-                                <option value="Bajo">$5,000 - $10,000</option>
-                                <option value="Medio">$10,000 - $20,000</option>
-                                <option value="Alto">$20,000+</option>
+                                <option value="Bajo">$2,000 - $5,000</option>
+                                <option value="Medio">$5,000 - $10,000</option>
+                                <option value="Alto">$10,000+</option>
                             </select>
                             <div *ngIf="formEmail.get('budget')?.invalid && formEmail.get('budget')?.touched" class="text-danger">
                                 Selecciona una opción.
